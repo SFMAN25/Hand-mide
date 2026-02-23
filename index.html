@@ -9,11 +9,12 @@
     
     <style>
         :root {
-            --primary: #8e6d45; /* لون برونزي دافئ للحقائب */
-            --accent: #f5ebe0;
-            --dark: #2d231b;
-            --white: #ffffff;
-            --whatsapp: #25D366;
+            --primary-brown: #967155; /* لون الشنط الجلد والكروشيه */
+            --bg-cream: #fdfaf5;
+            --dark-brown: #3e2f24;
+            --whatsapp-color: #25D366;
+            --fb-color: #1877F2;
+            --tiktok-color: #000000;
         }
 
         * {
@@ -24,14 +25,13 @@
         }
 
         body {
-            background-color: #fffaf5;
-            color: var(--dark);
-            line-height: 1.6;
+            background-color: var(--bg-cream);
+            color: var(--dark-brown);
         }
 
-        /* الهيدر الجديد - حل مشكلة التداخل */
+        /* الهيدر المعدل لمنع تداخل الكلام */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             padding: 15px 5%;
             position: fixed;
             width: 100%;
@@ -40,82 +40,62 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: var(--primary);
+            font-size: 1.4rem;
+            color: var(--primary-brown);
             text-decoration: none;
             font-weight: bold;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--dark-brown);
             font-weight: bold;
+            margin: 0 10px;
             font-size: 14px;
-            transition: 0.3s;
         }
 
-        nav a:hover { color: var(--primary); }
-
         .lang-btn {
-            background: var(--primary);
+            background: var(--primary-brown);
             color: white;
             border: none;
             padding: 5px 12px;
             border-radius: 20px;
             cursor: pointer;
-            font-size: 12px;
         }
 
-        /* قسم الترحيب */
+        /* القسم الرئيسي */
         .hero {
-            height: 70vh;
+            height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('https://images.unsplash.com/photo-1594223274512-ad4803739b7c?q=80&w=1500&auto=format&fit=crop');
+                        url('https://images.unsplash.com/photo-1544816153-12ad5d7133a2?q=80&w=1500&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             color: white;
+            text-align: center;
             margin-top: 60px;
         }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; }
 
         /* قسم المنتجات */
-        .container { padding: 50px 5%; max-width: 1200px; margin: auto; }
+        .container { padding: 40px 5%; max-width: 1200px; margin: auto; }
         
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 28px;
-            color: var(--primary);
-            position: relative;
+            margin-bottom: 30px;
+            color: var(--primary-brown);
         }
 
-        .section-title::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-            display: block;
-            margin: 10px auto;
-        }
-
-        .grid {
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
@@ -129,65 +109,58 @@
             transition: 0.3s;
         }
 
-        .card:hover { transform: translateY(-10px); }
-
-        .card img { width: 100%; height: 320px; object-fit: cover; }
-
-        .card-body { padding: 20px; text-align: center; }
-
-        .price { color: var(--primary); font-size: 1.2rem; font-weight: bold; display: block; margin: 10px 0; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 300px; object-fit: cover; }
+        .card-info { padding: 20px; text-align: center; }
+        .price { color: var(--primary-brown); font-weight: bold; font-size: 1.2rem; display: block; margin: 10px 0; }
 
         .order-btn {
-            background: var(--whatsapp);
+            background: var(--whatsapp-color);
             color: white;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 25px;
             display: inline-block;
             font-weight: bold;
-            transition: 0.3s;
         }
 
-        .order-btn:hover { opacity: 0.8; }
-
-        /* فوتر السوشيال ميديا */
-        footer {
-            background: var(--dark);
+        /* روابط السوشيال ميديا بالأسفل */
+        .social-footer {
+            background: var(--dark-brown);
             color: white;
             padding: 40px 5%;
             text-align: center;
         }
 
-        .social-icons {
-            margin: 20px 0;
+        .social-links {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
+            margin-top: 20px;
         }
 
-        .social-icons a {
-            color: white;
+        .social-links a {
             text-decoration: none;
-            padding: 10px 20px;
+            color: white;
+            padding: 12px 25px;
             border-radius: 30px;
-            font-size: 14px;
+            font-weight: bold;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             transition: 0.3s;
         }
 
-        .fb { background: #1877F2; }
-        .wa { background: #25D366; }
-        .tk { background: #000000; }
+        .btn-facebook { background: var(--fb-color); }
+        .btn-whatsapp { background: var(--whatsapp-color); }
+        .btn-tiktok { background: var(--tiktok-color); }
 
-        .social-icons a:hover { transform: scale(1.05); opacity: 0.9; }
+        .social-links a:hover { opacity: 0.8; transform: scale(1.05); }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 2rem; }
-            nav { gap: 10px; }
-            nav a { font-size: 12px; }
+            nav a { display: none; } /* إخفاء الروابط في الموبايل لعدم التداخل */
         }
     </style>
 </head>
@@ -195,87 +168,68 @@
 
     <header>
         <a href="#" class="logo">Nesma Art Bags</a>
-        <nav id="main-nav">
-            <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-            <a href="#shop" data-ar="المتجر" data-en="Shop">المتجر</a>
-            <a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#products">المنتجات</a>
+            <a href="#contact">تواصل معنا</a>
             <button class="lang-btn" onclick="toggleLang()">EN</button>
         </nav>
     </header>
 
     <section class="hero" id="home">
         <h1 data-ar="نسمة آرت باجز" data-en="Nesma Art Bags">نسمة آرت باجز</h1>
-        <p data-ar="أناقة يدوية في كل تفصيلة" data-en="Handmade Elegance in Every Detail">أناقة يدوية في كل تفصيلة</p>
+        <p data-ar="صناعة يدوية بكل حب" data-en="Handmade with love">صناعة يدوية بكل حب</p>
     </section>
 
-    <div class="container" id="shop">
-        <h2 class="section-title" data-ar="مجموعتنا المميزة" data-en="Our Collection">مجموعتنا المميزة</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500" alt="Bag">
-                <div class="card-body">
-                    <h3 data-ar="حقيبة كروشيه بني" data-en="Brown Crochet Bag">حقيبة كروشيه بني</h3>
-                    <span class="price">450 EGP</span>
-                    <a href="https://wa.me/201234567890" class="order-btn">
-                        <i class="fab fa-whatsapp"></i> اطلبي الآن
-                    </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1544816153-12ad5d7133a2?w=500" alt="Bag">
-                <div class="card-body">
-                    <h3 data-ar="حقيبة يد عصرية" data-en="Modern Handbag">حقيبة يد عصرية</h3>
-                    <span class="price">550 EGP</span>
-                    <a href="https://wa.me/201234567890" class="order-btn">
-                        <i class="fab fa-whatsapp"></i> اطلبي الآن
-                    </a>
-                </div>
-            </div>
-
+    <div class="container" id="products">
+        <h2 class="section-title" data-ar="مجموعتنا" data-en="Our Collection">مجموعتنا</h2>
+        
+        <div class="product-grid">
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500" alt="Bag">
-                <div class="card-body">
-                    <h3 data-ar="حقيبة فنية ملونة" data-en="Artistic Colorful Bag">حقيبة فنية ملونة</h3>
-                    <span class="price">600 EGP</span>
-                    <a href="https://wa.me/201234567890" class="order-btn">
-                        <i class="fab fa-whatsapp"></i> اطلبي الآن
-                    </a>
+                <div class="card-info">
+                    <h3 data-ar="حقيبة كروشيه مودرن" data-en="Modern Crochet Bag">حقيبة كروشيه مودرن</h3>
+                    <span class="price">450 EGP</span>
+                    <a href="https://wa.me/201234567890" class="order-btn"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
                 </div>
             </div>
 
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500" alt="Bag">
+                <div class="card-info">
+                    <h3 data-ar="حقيبة يد كلاسيك" data-en="Classic Handbag">حقيبة يد كلاسيك</h3>
+                    <span class="price">550 EGP</span>
+                    <a href="https://wa.me/201234567890" class="order-btn"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer id="contact">
-        <h3 data-ar="تابعينا على" data-en="Follow Us">تابعينا على</h3>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61587569047782" class="fb" target="_blank">
+    <footer class="social-footer" id="contact">
+        <h2 data-ar="تابعينا على" data-en="Follow Us">تابعينا على</h2>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61587569047782" target="_blank" class="btn-facebook">
                 <i class="fab fa-facebook-f"></i> Facebook
             </a>
-            <a href="https://whatsapp.com/channel/0029Vb74Eg39mrGTL6GyD12h" class="wa" target="_blank">
+            <a href="https://whatsapp.com/channel/0029Vb74Eg39mrGTL6GyD12h" target="_blank" class="btn-whatsapp">
                 <i class="fab fa-whatsapp"></i> WhatsApp Channel
             </a>
-            <a href="https://www.tiktok.com/@nesma.art.bags?_r=1&_t=ZS-93lICTP0Re8" class="tk" target="_blank">
+            <a href="https://www.tiktok.com/@nesma.art.bags?_r=1&_t=ZS-93lICTP0Re8" target="_blank" class="btn-tiktok">
                 <i class="fab fa-tiktok"></i> TikTok
             </a>
         </div>
-        <p>&copy; 2026 Nesma Art Bags | Handmade with Passion</p>
+        <p style="margin-top: 30px; font-size: 14px; opacity: 0.7;">&copy; 2026 Nesma Art Bags</p>
     </footer>
 
     <script>
-        let currentLang = "ar";
+        let currentLang = 'ar';
         function toggleLang() {
-            currentLang = currentLang === "ar" ? "en" : "ar";
-            document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-            document.documentElement.lang = currentLang;
-            
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
             document.querySelectorAll("[data-ar]").forEach(el => {
-                el.textContent = currentLang === "ar" ? el.dataset.ar : el.dataset.en;
+                el.textContent = currentLang === 'ar' ? el.dataset.ar : el.dataset.en;
             });
-
-            document.querySelector(".lang-btn").textContent = currentLang === "ar" ? "EN" : "ع";
+            document.querySelector(".lang-btn").textContent = currentLang === 'ar' ? 'EN' : 'ع';
         }
     </script>
 </body>
