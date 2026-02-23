@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nesma Art Bags | الفخامة اليدوية</title>
+    <title>Nesma Art Bags | بوتيك الفخامة اليدوية</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Cairo:wght@300;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -11,9 +11,9 @@
         :root {
             --gold: #d4af37;
             --black: #0a0a0a;
-            --near-black: #1a1a1a;
+            --near-black: #161616;
             --white: #ffffff;
-            --grey: #888;
+            --grey: #a0a0a0;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
@@ -22,111 +22,118 @@
             background-color: var(--black);
             color: var(--white);
             font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
         }
 
         header {
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
             background: linear-gradient(to bottom, #111, transparent);
         }
 
         .logo-center img {
-            max-height: 160px; 
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+            max-height: 180px; 
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+            transition: 0.5s;
         }
 
         nav {
-            margin-top: 20px;
+            margin: 30px auto;
+            max-width: 500px;
             display: flex;
             justify-content: center;
             gap: 25px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 12px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px 0;
         }
 
         nav a {
             text-decoration: none;
             color: var(--gold);
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             letter-spacing: 1px;
+            transition: 0.3s;
         }
 
         .products-grid {
             max-width: 1200px;
             margin: 40px auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
             padding: 0 20px;
         }
 
         .product-card {
             background: var(--near-black);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            padding: 18px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
-            transition: 0.4s;
+            transition: 0.5s;
         }
 
         .product-card:hover { 
             border-color: var(--gold); 
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
         }
 
         .product-card img {
             width: 100%;
-            height: 420px;
+            height: 450px;
             object-fit: cover;
-            border-radius: 8px;
-            background-color: #111;
+            border-radius: 10px;
+            border: 1px solid #222;
         }
 
         .product-info h3 {
             font-family: 'Cinzel', serif;
             color: var(--gold);
-            margin: 18px 0 10px;
-            font-size: 1.3rem;
+            margin: 20px 0 10px;
+            font-size: 1.5rem;
         }
 
-        .price-container { margin-bottom: 22px; }
-        .old-price { text-decoration: line-through; color: var(--grey); margin-left: 10px; font-size: 1rem; }
-        .new-price { font-size: 1.6rem; color: var(--white); font-weight: bold; }
+        .price-container { margin-bottom: 25px; }
+        .old-price { text-decoration: line-through; color: var(--grey); margin-left: 12px; font-size: 1.1rem; }
+        .new-price { font-size: 1.8rem; color: var(--white); font-weight: bold; }
 
         .btn-gold {
-            display: inline-block;
+            display: block;
             background: transparent;
             color: var(--gold);
             border: 1px solid var(--gold);
-            padding: 12px 35px;
+            padding: 14px;
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: 0.4s;
-            border-radius: 4px;
+            border-radius: 8px;
+            letter-spacing: 1px;
         }
 
         .btn-gold:hover { 
             background: var(--gold); 
             color: var(--black);
-            box-shadow: 0 0 15px var(--gold);
+            box-shadow: 0 0 20px var(--gold);
         }
 
         footer {
-            padding: 50px 20px;
+            padding: 80px 20px;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
+            background: #050505;
         }
 
-        .social-box a { color: var(--gold); font-size: 1.8rem; margin: 0 18px; transition: 0.3s; }
+        .social-box a { color: var(--gold); font-size: 2rem; margin: 0 20px; transition: 0.3s; }
         .social-box a:hover { color: var(--white); transform: scale(1.2); }
 
         @media (max-width: 768px) {
-            .product-card img { height: 350px; }
+            .product-card img { height: 400px; }
+            .logo-center img { max-height: 140px; }
         }
     </style>
 </head>
@@ -134,73 +141,73 @@
 
     <header>
         <div class="logo-center">
-            <img src="https://files.catbox.moe/05z8at.png" alt="Nesma Art Bags Logo">
+            <img src="https://files.catbox.moe/ik9v4a.jpeg" alt="Nesma Art Bags Logo">
         </div>
         <nav>
-            <a href="#collection">المجموعة - COLLECTION</a>
-            <a href="#contact">تواصل معنا</a>
+            <a href="#collection">المجموعة الفاخرة</a>
         </nav>
     </header>
 
     <div class="products-grid" id="collection">
         
         <div class="product-card">
-            <img src="https://files.catbox.moe/97i5s6.jpg" alt="حقيبة القطيفة الملكية">
+            <img src="https://files.catbox.moe/ubyyay.jpeg" alt="The Royal Velvet">
             <div class="product-info">
                 <h3>The Royal Velvet</h3>
                 <div class="price-container">
                     <span class="old-price">650 EGP</span>
                     <span class="new-price">450 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة القطيفة الملكية" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب شنطة Royal Velvet العنابي" class="btn-gold">Order via WhatsApp</a>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="https://files.catbox.moe/6v0fno.jpg" alt="حقيبة الزمرد">
+            <img src="https://files.catbox.moe/djutjf.jpeg" alt="Emerald Elegance">
             <div class="product-info">
                 <h3>Emerald Elegance</h3>
                 <div class="price-container">
                     <span class="old-price">600 EGP</span>
                     <span class="new-price">400 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة الزمرد" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب شنطة Emerald Elegance الخضراء" class="btn-gold">Order via WhatsApp</a>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="https://files.catbox.moe/z41g81.jpg" alt="حقيبة القلوب">
+            <img src="https://files.catbox.moe/8kak7t.jpeg" alt="The Heart Bloom">
             <div class="product-info">
                 <h3>The Heart Bloom</h3>
                 <div class="price-container">
                     <span class="old-price">650 EGP</span>
                     <span class="new-price">450 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة القلوب" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب شنطة Heart Bloom" class="btn-gold">Order via WhatsApp</a>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="https://files.catbox.moe/8yq8z0.jpg" alt="حقيبة القطيفة المضلعة">
+            <img src="https://files.catbox.moe/9tvwa0.jpeg" alt="Merlot Ribbed">
             <div class="product-info">
-                <h3>Merlot Ribbed Velvet</h3>
+                <h3>Merlot Ribbed</h3>
                 <div class="price-container">
                     <span class="old-price">650 EGP</span>
                     <span class="new-price">450 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة القطيفة المضلعة" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب شنطة Merlot Ribbed القطيفة" class="btn-gold">Order via WhatsApp</a>
             </div>
         </div>
 
     </div>
 
-    <footer id="contact">
+    <footer>
+        <h2 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 25px;">Nesma Art Bags</h2>
         <div class="social-box">
             <a href="https://www.facebook.com/profile.php?id=61587569047782" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://whatsapp.com/channel/0029Vb74Eg39mrGTL6GyD12h" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.tiktok.com/@nesma.art.bags" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
-        <p style="margin-top: 25px; font-size: 0.75rem; color: var(--grey); letter-spacing: 1px;">© 2026 NESMA ART BAGS | HANDMADE EXCELLENCE</p>
+        <p style="margin-top: 40px; font-size: 0.8rem; color: var(--grey); letter-spacing: 2px;">© 2026 NESMA ART BAGS | HANDMADE WITH PASSION</p>
     </footer>
 
 </body>
