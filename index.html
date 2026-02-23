@@ -10,52 +10,36 @@
     <style>
         :root {
             --gold: #d4af37;
-            --dark-gold: #aa8831;
             --black: #0a0a0a;
             --near-black: #1a1a1a;
             --white: #ffffff;
             --grey: #888;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
         body {
             background-color: var(--black);
             color: var(--white);
             font-family: 'Cairo', sans-serif;
-            overflow-x: hidden;
         }
 
-        /* الهيدر الملكي - اللوجو في المنتصف */
         header {
             padding: 40px 20px;
             text-align: center;
             background: linear-gradient(to bottom, #111, transparent);
-            position: relative;
-        }
-
-        .logo-center {
-            display: block;
-            margin: 0 auto;
         }
 
         .logo-center img {
-            max-height: 180px; 
-            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
-            transition: 0.5s;
+            max-height: 150px; 
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
         }
 
-        /* القائمة الذهبية */
         nav {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             padding: 15px 0;
@@ -65,198 +49,140 @@
             text-decoration: none;
             color: var(--gold);
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            transition: 0.3s;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
-        nav a:hover {
-            color: var(--white);
-            text-shadow: 0 0 10px var(--gold);
-        }
-
-        /* قسم الترحيب الساحر */
-        .hero-banner {
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle, #222 0%, #000 100%);
-            text-align: center;
-        }
-
-        .hero-banner h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-
-        .hero-banner p {
-            font-family: 'Amiri', serif;
-            font-style: italic;
-            font-size: 1.5rem;
-            opacity: 0.8;
-        }
-
-        /* شبكة المنتجات الفاخرة */
         .products-grid {
-            max-width: 1300px;
-            margin: 50px auto;
+            max-width: 1200px;
+            margin: 40px auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             padding: 0 20px;
         }
 
         .product-card {
             background: var(--near-black);
             border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 15px;
-            transition: 0.5s;
             text-align: center;
+            transition: 0.4s;
         }
 
-        .product-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
-            transform: translateY(-10px);
-        }
+        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
 
         .product-card img {
             width: 100%;
-            height: 420px;
+            height: 400px;
             object-fit: cover;
-            border-radius: 4px;
+            border-radius: 5px;
+            background-color: #222; /* لون احتياطي لو الصورة اتأخرت */
         }
 
         .product-info h3 {
             font-family: 'Cinzel', serif;
             color: var(--gold);
-            font-size: 1.4rem;
             margin: 15px 0;
         }
 
         .price-container { margin-bottom: 20px; }
-
         .old-price { text-decoration: line-through; color: var(--grey); margin-left: 10px; }
-
-        .new-price { font-size: 1.7rem; color: var(--white); font-weight: bold; }
+        .new-price { font-size: 1.5rem; color: var(--white); font-weight: bold; }
 
         .btn-gold {
             display: inline-block;
             background: transparent;
             color: var(--gold);
             border: 1px solid var(--gold);
-            padding: 12px 35px;
+            padding: 10px 30px;
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
             transition: 0.4s;
         }
 
-        .btn-gold:hover {
-            background: var(--gold);
-            color: var(--black);
-            box-shadow: 0 0 20px var(--gold);
-        }
+        .btn-gold:hover { background: var(--gold); color: var(--black); }
 
         footer {
-            padding: 60px 20px;
+            padding: 40px 20px;
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             text-align: center;
-            background: #050505;
         }
 
-        .social-box a { color: var(--gold); font-size: 1.8rem; margin: 0 15px; }
-
-        @media (max-width: 768px) {
-            .hero-banner h1 { font-size: 2rem; }
-            .logo-center img { max-height: 130px; }
-        }
+        .social-box a { color: var(--gold); font-size: 1.5rem; margin: 0 15px; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-center">
-            <img src="https://i.ibb.co/WN4RqfMZ/logo.png" alt="Nesma Art Bags Logo">
+            <img src="https://i.ibb.co/C2S4yXw/WN4RqfMZ.png" alt="Nesma Art Bags Logo">
         </div>
         <nav>
-            <a href="#home">الرئيسية</a>
-            <a href="#collection">المجموعة</a>
-            <a href="#contact">تواصل معنا</a>
+            <a href="#collection">المجموعة - COLLECTION</a>
         </nav>
     </header>
-
-    <section class="hero-banner" id="home">
-        <h1>Handmade Masterpieces</h1>
-        <p>حيث تجتمع الفخامة مع الإبداع اليدوي</p>
-    </section>
 
     <div class="products-grid" id="collection">
         
         <div class="product-card">
-            <img src="https://i.ibb.co/Xx0r2gBb/1.jpg" alt="حقيبة القطيفة الملكية">
+            <img src="https://i.ibb.co/M604v7y/Xx0r2gBb.jpg" alt="حقيبة القطيفة الملكية">
             <div class="product-info">
                 <h3>The Royal Velvet</h3>
                 <div class="price-container">
                     <span class="old-price">650 EGP</span>
                     <span class="new-price">450 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة القطيفة الملكية (العنابي)" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أريد طلب حقيبة القطيفة الملكية" class="btn-gold">Order Now</a>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="https://i.ibb.co/3yskCksx/2.jpg" alt="حقيبة الزمرد">
+            <img src="https://i.ibb.co/q9mNMT0/3yskCksx.jpg" alt="حقيبة الزمرد">
             <div class="product-info">
                 <h3>Emerald Elegance</h3>
                 <div class="price-container">
                     <span class="old-price">600 EGP</span>
                     <span class="new-price">400 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة الزمرد الفخمة" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أريد طلب حقيبة الزمرد" class="btn-gold">Order Now</a>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="https://i.ibb.co/LzXsXfFK/3.jpg" alt="حقيبة القلوب">
+            <img src="https://i.ibb.co/YPX0vYk/LzXsXfFK.jpg" alt="حقيبة القلوب">
             <div class="product-info">
                 <h3>The Heart Bloom</h3>
                 <div class="price-container">
                     <span class="old-price">650 EGP</span>
                     <span class="new-price">450 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة القلوب البارزة" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أريد طلب حقيبة القلوب" class="btn-gold">Order Now</a>
             </div>
         </div>
 
         <div class="product-card">
-            <img src="https://i.ibb.co/23jpmY0N/4.jpg" alt="حقيبة القطيفة المضلعة">
+            <img src="https://i.ibb.co/51p6rKm/23jpmY0N.jpg" alt="حقيبة القطيفة المضلعة">
             <div class="product-info">
                 <h3>Merlot Ribbed Velvet</h3>
                 <div class="price-container">
                     <span class="old-price">650 EGP</span>
                     <span class="new-price">450 EGP</span>
                 </div>
-                <a href="https://wa.me/201289685354?text=أهلاً نسمة، أريد طلب حقيبة القطيفة المضلعة الفاخرة" class="btn-gold">Order Now</a>
+                <a href="https://wa.me/201289685354?text=أريد طلب حقيبة القطيفة المضلعة" class="btn-gold">Order Now</a>
             </div>
         </div>
 
     </div>
 
-    <footer id="contact">
-        <h2 style="font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 20px;">Nesma Art Bags</h2>
+    <footer>
         <div class="social-box">
             <a href="https://www.facebook.com/profile.php?id=61587569047782" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://whatsapp.com/channel/0029Vb74Eg39mrGTL6GyD12h" target="_blank"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.tiktok.com/@nesma.art.bags" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
-        <p style="margin-top: 30px; font-size: 0.7rem; color: var(--grey); letter-spacing: 2px;">© 2026 NESMA ART BAGS | DESIGNED FOR YOU</p>
+        <p style="margin-top: 20px; font-size: 0.7rem; color: var(--grey);">© 2026 NESMA ART BAGS</p>
     </footer>
 
 </body>
